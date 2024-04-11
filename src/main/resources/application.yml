@@ -1,0 +1,31 @@
+spring:
+ application:
+  name: video-streaming-demo
+ servlet:
+  multipart:
+   max-file-size: 10000MB
+   max-request-size: 10000MB
+ datasource:
+  url: jdbc:postgresql://localhost:5432/video-streaming
+  username: test
+  password: test
+  driver-class-name: org.postgresql.Driver
+ jpa:
+  hibernate:
+   ddl-auto: validate
+  show-sql: true
+  database: POSTGRESQL
+
+
+streaming:
+  chunk:
+   default-size: 2621440 #-- in bytes
+
+minio:
+ url: http://localhost:9000
+ username: minio_admin
+ password: minio_admin
+ bucket:
+  name: videos
+ stream:
+  part-size: 5242880 #-- in bytes
